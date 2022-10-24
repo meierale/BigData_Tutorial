@@ -56,7 +56,8 @@ Die Daten selbst liegen im angegebenen CSV, die Metadatan im Hive Warehouse:
 1. `select name from breweries limit 10;`
 1. `select count(*) from breweries;`
 
-ODER
+### Alternative mit Hiveserver2 und Beeline
+
 Alternative Variante, manuell Tabelle anlegen:
 1. `root@51a06b766366:/opt# hiveserver2`
    * `netstat -anp | grep 10000`
@@ -82,7 +83,7 @@ Alternative Variante, manuell Tabelle anlegen:
    ```
 1. `select name from breweries limit 10;`
 
-
+### Verifikation der Metadaten in HDFS
 Den neuen Eintrag der Breweries-DB Metadaten sehen wir nun auch in HDFS, unter dem Userhome des `hive` users::
 ```
 hdfs dfs -ls -R /user

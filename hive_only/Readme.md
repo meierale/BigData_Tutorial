@@ -12,7 +12,10 @@ Wenn du dir das `docker-compose.yml` genauer anschaust, siehst du, dass der `emp
 ## Prüfen der Services
 Nachdem `docker-compose up` einige Zeit gelaufen ist, solltest du irgendwann im Terminal die Meldung `hive-metastore:9083 is available` sehen. Dies ist das Zeichen, dass wir mit den weiteren Schritten fortfahren können.
 
-Alternativ kannst du auch mit `docker stats` die aktuelle Auslastung der Docker container einsehen. Wenn jeder der 5 Container weniger als 2% CPU Auslastung aufweist und jeder Container lediglich wenige Hundert MB Ram benötigt, dann kannst du ebenfalls mit den weiteren Schritten fortfahren.
+Alternativ kannst du auch mit `docker stats` die aktuelle Auslastung der Docker container einsehen:
+* Wenn jeder der 5 Container weniger als 2% CPU Auslastung aufweist 
+* und wenn jeder Container lediglich wenige Hundert MB Ram benötigt, 
+* dann kannst du ebenfalls mit den weiteren Schritten fortfahren.
 
 ## Hive Demo
 Führe die folgenden Schritte nacheinander aus:
