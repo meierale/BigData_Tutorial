@@ -1,7 +1,9 @@
 # BigData_Tutorial
 Dies ist ein bewusst sehr kurz & einfach gehaltenes mini Tutorial zu HDFS, Spark und Hive. Es basiert auf der Vorarbeit von Marcel Jan (https://github.com/Marcel-Jan/docker-hadoop-spark) und den Docker images von Big Data Europe (https://github.com/big-data-europe)
 
-Wenn du das Repo lokal geklont hast, der Docker Daemon auf deinem System läuft, dann starte bitte die ganze Umgebung mit:
+## Start der Umgebung
+
+Wenn du das Repo lokal geklont hast, der Docker Daemon auf deinem System läuft, dann starte bitte die ganze Umgebung in einem Terminal mit:
 ```
 docker-compose up
 ```
@@ -15,7 +17,7 @@ Die folgenden Web UIs werden wir im Tutorial verwenden:
 * Spark Worker UI:  http://localhost:8081/ (http://3.67.205.210:8081/) 
 
 ## HDFS 
-In diesem Teil des Tutorial laden wir zunächst ein lokal vorhandenes File in einen Docker Container hoch, welcher Zugriff auf HDFS hat. Dann laden wir von diesem Docker Container aus das File ins HDFS:
+In diesem Teil des Tutorial arbeiten wir in einem zweiten Terminal. Wir laden zunächst ein lokal vorhandenes File in einen Docker Container hoch, welcher Zugriff auf HDFS hat. Dann laden wir von diesem Docker Container aus das File ins HDFS:
 1. `docker ps` 
 1. `docker cp breweries.csv nodemanager:tmp/breweries.csv`
 1. `docker exec -it nodemanager bash`
@@ -90,4 +92,23 @@ hdfs dfs -ls -R /user
 drwxr-xr-x   - root supergroup          0 2022-10-15 13:59 /user/hive
 drwxrwxr-x   - root supergroup          0 2022-10-16 13:47 /user/hive/warehouse
 drwxrwxr-x   - root supergroup          0 2022-10-16 13:47 /user/hive/warehouse/openbeer.db
+```
+
+## Stop der Umgebung
+Stoppe den docker-compose Prozess in denselben Terminal, wo er noch aktiv ist mit: `ctrl-c`
+
+Wenn du folgende Meldung im Terminal siehst, ist aller erfolgreich gestoppt:
+```
+^CGracefully stopping... (press Ctrl+C again to force)
+Stopping resourcemanager           ... done
+Stopping hive-server               ... done
+Stopping historyserver             ... done
+Stopping nodemanager               ... done
+Stopping hive-metastore            ... done
+Stopping spark-worker-1            ... done
+Stopping spark-master              ... done
+Stopping namenode                  ... done
+Stopping datanode                  ... done
+Stopping presto-coordinator        ... done
+Stopping hive-metastore-postgresql ... done
 ```
