@@ -20,10 +20,10 @@ Die folgenden Web UIs werden wir im Tutorial verwenden:
 In diesem Teil des Tutorial arbeiten wir in einem zweiten Terminal. Wir laden zunächst ein lokal vorhandenes File in einen Docker Container hoch, welcher Zugriff auf HDFS hat. Dann laden wir von diesem Docker Container aus das File ins HDFS:
 1. `docker ps` 
 1. `docker cp breweries.csv nodemanager:tmp/breweries.csv`
-1. `docker exec -it nodemanager bash`
+1. `docker exec -it nodemanager /bin/bash`
 1. `hdfs dfs -ls /`
 1. `hdfs dfs -mkdir -p /data/openbeer/breweries`
-1. `hdfs dfs -put breweries.csv /data/openbeer/breweries/breweries.csv`
+1. `hdfs dfs -put /tmp/breweries.csv /data/openbeer/breweries/breweries.csv`
 1. `hdfs dfs -ls -R /data`
 
 ## Spark (pySpark)
@@ -35,12 +35,13 @@ Nun, da wir das file `breweries.csv` in HDFS liegen haben, können wir es mit Py
 1. `brewfile = spark.read.csv("hdfs://namenode:9000/data/openbeer/breweries/breweries.csv")`
 1. `brewfile.show()`
 1. `brewfile.printSchema()`
+1. `brewfile = spark.read.option("header", True).csv("hdfs://namenode:9000/data/openbeer/breweries/breweries.csv")`
 1. `brewfile.count()`
-1. `brewfile.groupBy("name", "calories").count().show()`
+1. `brewfile.groupBy("state", "city").count().show()`
 
-Weitere Beispiele einfügen:
+Weitere Beispiele zum selbst ausprobieren:
 ```
-filter(), groupby(), toDF(), sort, etc.
+filter(), toDF(), sort(), etc.
 ```
 
 ## Hive
