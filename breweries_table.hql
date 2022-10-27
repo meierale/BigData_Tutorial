@@ -1,4 +1,6 @@
-CREATE EXTERNAL TABLE IF NOT EXISTS breweries(
+create database if not exists breweries;
+use breweries;
+CREATE EXTERNAL TABLE IF NOT EXISTS brewery(
     NUM INT,
     NAME CHAR(100),
     CITY CHAR(100),
