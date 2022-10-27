@@ -56,8 +56,8 @@ Die Daten selbst liegen im angegebenen CSV, die Metadatan im Hive Warehouse:
 1. `hive`
 1. `show databases;`
 1. `describe breweries;`
-1. `select name from breweries limit 10;`
-1. `select count(*) from breweries;`
+1. `select name from brewery limit 10;`
+1. `select count(*) from brewery;`
 
 ### Alternative mit Hiveserver2 und Beeline
 
