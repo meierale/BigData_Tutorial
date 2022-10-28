@@ -3,6 +3,8 @@ Dies ist ein bewusst sehr kurz & einfach gehaltenes mini Tutorial zu HDFS, Spark
 
 Um das ganze Tutorial durchzuspielen, rechne mit ca. 30 Minuten. Die einzelnen Commands sind nicht weiter erläutert, da sie ziemlich selbsterklärend sein sollten, sofern du dich schon etwas mit Docker und Linux auskennst.
 
+Bitte mach deine Terminals so breit wie möglich, damit du die Outputs möglichst gut lesen kannst.
+
 ## Start der Umgebung
 
 Wenn du das Repo lokal geklont hast, der Docker Daemon auf deinem System läuft, dann starte bitte die ganze Umgebung in einem Terminal mit:
@@ -47,6 +49,8 @@ In diesem Teil des Tutorial arbeiten wir in einem zweiten Terminal. Wir laden zu
 
 Achte zwischendurch auf das erste Terminal, wo du etwas zusehen kannst, was "im Cluster" passiert.
 
+Verlasse für die nächste Übung den `namenodemanager`, so dass du im zweiten Terminal wieder auf deinem lokalen OS bist.
+
 ## Spark (pySpark)
 Nun, da wir das file `breweries.csv` in HDFS liegen haben, können wir es mit PySpark einlesen und bearbeiten:
 
@@ -64,6 +68,8 @@ Weitere Beispiele zum selbst ausprobieren:
 ```
 filter(), toDF(), sort(), etc.
 ```
+
+Wenn du mit der Spark Übung fertig bist, verlasse den `spark-master`, damit du wieder auf dem lokalen OS bist.
 
 ### Spark Web UI 
 Wenn du parallel zu der Spark Aufgabe das Web UI des Spark master & worker öffnest, siehst du den PySpark Process angezeigt.
